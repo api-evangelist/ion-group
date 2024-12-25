@@ -8,7 +8,7 @@ apis:
     properties:
       - url: https://api.acuris.com/entities/docs/api
         type: Documentation
-      - url: openapiion-group-acuris-entities-api-openapi.yml
+      - url: openapi/ion-group-acuris-entities-api-openapi.yml
         type: OpenAPI
     description: >-
       The Acuris Entities API allows you to search over 1M records of private
