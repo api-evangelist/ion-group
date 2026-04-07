@@ -1,6 +1,6 @@
 openapi: 3.0.2
 info:
-  title: Acuris Entities API
+  title: Ion Group Acuris Entities API
   version: 1.0.0
 servers:
   - url: https://api.acuris.com
@@ -13,8 +13,8 @@ paths:
   /entities:
     get:
       tags:
-        - - - - entities
-      summary: Get list of entities (with optional filters)
+        -   -   -   - entities
+      summary: Ion Group Get list of entities (with optional filters)
       description: >-
         Returns JSON containing entities matching given filtering criteria set
         (or top ten entities when no filters are provided).
@@ -423,8 +423,8 @@ paths:
   /entities/{id}:
     get:
       tags:
-        - - - - entityById
-      summary: Get one entity by its ID
+        -   -   -   - entityById
+      summary: Ion Group Get one entity by its ID
       parameters:
         - name: Accept-Encoding
           in: header
@@ -488,8 +488,8 @@ paths:
   /entities/hierarchy:
     get:
       tags:
-        - - - - entitiesHierarchy
-      summary: Get entities hierarchy (with optional filters)
+        -   -   -   - entitiesHierarchy
+      summary: Ion Group Get entities hierarchy (with optional filters)
       description: >-
         Returns JSON containing entities matching given filtering criteria set
         (or top ten entities when no filters are provided).
