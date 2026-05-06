@@ -1,0 +1,260 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Ion Group Acuris Entities API
+  description: Ion Group Acuris Entities API API capability.
+  tags:
+  - Ion
+  - Group
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: ion-group
+    baseUri: https://api.acuris.com
+    description: Ion Group Acuris Entities API HTTP API.
+    authentication:
+      type: apikey
+      in: header
+      name: x-api-key
+      value: '{{ION_GROUP_TOKEN}}'
+    resources:
+    - name: entities
+      path: /entities
+      operations:
+      - name: get-entities
+        method: GET
+        description: Ion Group Get list of entities (with optional filters)
+        inputParameters:
+        - name: Accept-Encoding
+          in: header
+          type: string
+          description: We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.
+        - name: entityName
+          in: query
+          type: string
+          description: Search by entity name.
+        - name: entityType
+          in: query
+          type: array
+          description: Search by entity type.
+        - name: before
+          in: query
+          type: string
+          description: it acts as a live cursor and specify cursor where to end the result set
+        - name: after
+          in: query
+          type: string
+          description: it acts as a live cursor and specify cursor where to start the result set
+        - name: sector
+          in: query
+          type: array
+          description: Search by entity sector. <br>To see available values please visit <a href="/reference/docs#Industries,
+            Sectors and Subsectors">Reference data</a>.
+        - name: subsector
+          in: query
+          type: array
+          description: Search by entity subsector. <br>To see available values please visit <a href="/reference/docs#Industries,
+            Sectors and Subsectors">Reference data</a>.
+        - name: hqCountry
+          in: query
+          type: array
+          description: Search by headquarters country. <br>To see available values please visit <a href="/reference/docs#Countries
+            and States">Reference data</a>.
+        - name: hqState
+          in: query
+          type: array
+          description: Search by headquarters state. <br>To see available values please visit <a href="/reference/docs#Countries
+            and States">Reference data</a>.
+        - name: instrumentIsin
+          in: query
+          type: string
+          description: Search by ISIN.
+        - name: instrumentLei
+          in: query
+          type: string
+          description: Search by LEI.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: entities-id
+      path: /entities/{id}
+      operations:
+      - name: get-entities-id
+        method: GET
+        description: Ion Group Get one entity by its ID
+        inputParameters:
+        - name: Accept-Encoding
+          in: header
+          type: string
+          description: We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.
+        - name: id
+          in: path
+          type: string
+          required: true
+          description: 'ID of the entity. This parameter is required and needs to match the following RegExp: ^prime-[0-9]+$'
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: entities-hierarchy
+      path: /entities/hierarchy
+      operations:
+      - name: get-entities-hierarchy
+        method: GET
+        description: Ion Group Get entities hierarchy (with optional filters)
+        inputParameters:
+        - name: Accept-Encoding
+          in: header
+          type: string
+          description: We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.
+        - name: instrumentIsin
+          in: query
+          type: string
+          description: Search by ISIN.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: ion-group-rest
+    description: REST adapter for Ion Group Acuris Entities API.
+    resources:
+    - path: /entities
+      name: get-entities
+      operations:
+      - method: GET
+        name: get-entities
+        description: Ion Group Get list of entities (with optional filters)
+        call: ion-group.get-entities
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /entities/{id}
+      name: get-entities-id
+      operations:
+      - method: GET
+        name: get-entities-id
+        description: Ion Group Get one entity by its ID
+        call: ion-group.get-entities-id
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /entities/hierarchy
+      name: get-entities-hierarchy
+      operations:
+      - method: GET
+        name: get-entities-hierarchy
+        description: Ion Group Get entities hierarchy (with optional filters)
+        call: ion-group.get-entities-hierarchy
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: ion-group-mcp
+    transport: http
+    description: MCP adapter for Ion Group Acuris Entities API for AI agent use.
+    tools:
+    - name: get-entities
+      description: Ion Group Get list of entities (with optional filters)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ion-group.get-entities
+      with:
+        entityName: tools.entityName
+        entityType: tools.entityType
+        before: tools.before
+        after: tools.after
+        sector: tools.sector
+        subsector: tools.subsector
+        hqCountry: tools.hqCountry
+        hqState: tools.hqState
+        instrumentIsin: tools.instrumentIsin
+        instrumentLei: tools.instrumentLei
+      inputParameters:
+      - name: entityName
+        type: string
+        description: Search by entity name.
+      - name: entityType
+        type: array
+        description: Search by entity type.
+      - name: before
+        type: string
+        description: it acts as a live cursor and specify cursor where to end the result set
+      - name: after
+        type: string
+        description: it acts as a live cursor and specify cursor where to start the result set
+      - name: sector
+        type: array
+        description: Search by entity sector. <br>To see available values please visit <a href="/reference/docs#Industries,
+          Sectors and Subsectors">Reference data</a>.
+      - name: subsector
+        type: array
+        description: Search by entity subsector. <br>To see available values please visit <a href="/reference/docs#Industries,
+          Sectors and Subsectors">Reference data</a>.
+      - name: hqCountry
+        type: array
+        description: Search by headquarters country. <br>To see available values please visit <a href="/reference/docs#Countries
+          and States">Reference data</a>.
+      - name: hqState
+        type: array
+        description: Search by headquarters state. <br>To see available values please visit <a href="/reference/docs#Countries
+          and States">Reference data</a>.
+      - name: instrumentIsin
+        type: string
+        description: Search by ISIN.
+      - name: instrumentLei
+        type: string
+        description: Search by LEI.
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-entities-id
+      description: Ion Group Get one entity by its ID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ion-group.get-entities-id
+      with:
+        id: tools.id
+      inputParameters:
+      - name: id
+        type: string
+        description: 'ID of the entity. This parameter is required and needs to match the following RegExp: ^prime-[0-9]+$'
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-entities-hierarchy
+      description: Ion Group Get entities hierarchy (with optional filters)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ion-group.get-entities-hierarchy
+      with:
+        instrumentIsin: tools.instrumentIsin
+      inputParameters:
+      - name: instrumentIsin
+        type: string
+        description: Search by ISIN.
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    ION_GROUP_TOKEN: ION_GROUP_TOKEN
