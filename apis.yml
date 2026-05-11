@@ -54,6 +54,12 @@ common:
     url: https://iongroup.com/
   - type: Portal
     url: https://iongroup.com/analytics/data-portal/
+  - type: Integrations
+    url: https://iongroup.com/partners/
+integrations:
+  - name: Logo
+  - name: Twitter
+  - name: LinkedIn
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
