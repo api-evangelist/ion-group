@@ -1,31 +1,35 @@
 naftiko: 1.0.0-alpha2
 info:
-  label: Ion Group Acuris Entities API
-  description: Ion Group Acuris Entities API API capability.
+  label: Ion Group Acuris Entities API — Entities
+  description: 'Ion Group Acuris Entities API — Entities. 3 operations. Lead operation: Ion Group Get list of entities (with
+    optional filters). Self-contained Naftiko capability covering one Ion Group business surface.'
   tags:
-  - Ion
-  - Group
-  - API
-  created: '2026-05-06'
-  modified: '2026-05-06'
+  - Ion Group
+  - Entities
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ION_GROUP_API_KEY: ION_GROUP_API_KEY
 capability:
   consumes:
   - type: http
-    namespace: ion-group
+    namespace: ion-group-entities
     baseUri: https://api.acuris.com
-    description: Ion Group Acuris Entities API HTTP API.
-    authentication:
-      type: apikey
-      in: header
-      name: x-api-key
-      value: '{{ION_GROUP_TOKEN}}'
+    description: Ion Group Acuris Entities API — Entities business capability. Self-contained, no shared references.
     resources:
     - name: entities
       path: /entities
       operations:
-      - name: get-entities
+      - name: get
         method: GET
         description: Ion Group Get list of entities (with optional filters)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: Accept-Encoding
           in: header
@@ -75,38 +79,17 @@ capability:
           in: query
           type: string
           description: Search by LEI.
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
-    - name: entities-id
-      path: /entities/{id}
-      operations:
-      - name: get-entities-id
-        method: GET
-        description: Ion Group Get one entity by its ID
-        inputParameters:
-        - name: Accept-Encoding
-          in: header
-          type: string
-          description: We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.
-        - name: id
-          in: path
-          type: string
-          required: true
-          description: 'ID of the entity. This parameter is required and needs to match the following RegExp: ^prime-[0-9]+$'
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
     - name: entities-hierarchy
       path: /entities/hierarchy
       operations:
-      - name: get-entities-hierarchy
+      - name: get
         method: GET
         description: Ion Group Get entities hierarchy (with optional filters)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: Accept-Encoding
           in: header
@@ -116,63 +99,106 @@ capability:
           in: query
           type: string
           description: Search by ISIN.
+    - name: entities-id
+      path: /entities/{id}
+      operations:
+      - name: get
+        method: GET
+        description: Ion Group Get one entity by its ID
         outputRawFormat: json
         outputParameters:
         - name: result
           type: object
           value: $.
+        inputParameters:
+        - name: Accept-Encoding
+          in: header
+          type: string
+          description: We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.
+        - name: id
+          in: path
+          type: string
+          description: 'ID of the entity. This parameter is required and needs to match the following RegExp: ^prime-[0-9]+$'
+          required: true
+    authentication:
+      type: apikey
+      key: x-api-key
+      value: '{{env.ION_GROUP_API_KEY}}'
+      placement: header
   exposes:
   - type: rest
+    namespace: ion-group-entities-rest
     port: 8080
-    namespace: ion-group-rest
-    description: REST adapter for Ion Group Acuris Entities API.
+    description: REST adapter for Ion Group Acuris Entities API — Entities. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
     resources:
-    - path: /entities
-      name: get-entities
+    - path: /v1/entities
+      name: entities
+      description: REST surface for entities.
       operations:
       - method: GET
-        name: get-entities
+        name: get
         description: Ion Group Get list of entities (with optional filters)
-        call: ion-group.get-entities
+        call: ion-group-entities.get
+        with:
+          Accept-Encoding: rest.Accept-Encoding
+          entityName: rest.entityName
+          entityType: rest.entityType
+          before: rest.before
+          after: rest.after
+          sector: rest.sector
+          subsector: rest.subsector
+          hqCountry: rest.hqCountry
+          hqState: rest.hqState
+          instrumentIsin: rest.instrumentIsin
+          instrumentLei: rest.instrumentLei
         outputParameters:
         - type: object
           mapping: $.
-    - path: /entities/{id}
-      name: get-entities-id
+    - path: /v1/entities/hierarchy
+      name: entities-hierarchy
+      description: REST surface for entities-hierarchy.
       operations:
       - method: GET
-        name: get-entities-id
-        description: Ion Group Get one entity by its ID
-        call: ion-group.get-entities-id
+        name: get
+        description: Ion Group Get entities hierarchy (with optional filters)
+        call: ion-group-entities.get
         with:
+          Accept-Encoding: rest.Accept-Encoding
+          instrumentIsin: rest.instrumentIsin
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/entities/{id}
+      name: entities-id
+      description: REST surface for entities-id.
+      operations:
+      - method: GET
+        name: get
+        description: Ion Group Get one entity by its ID
+        call: ion-group-entities.get
+        with:
+          Accept-Encoding: rest.Accept-Encoding
           id: rest.id
         outputParameters:
         - type: object
           mapping: $.
-    - path: /entities/hierarchy
-      name: get-entities-hierarchy
-      operations:
-      - method: GET
-        name: get-entities-hierarchy
-        description: Ion Group Get entities hierarchy (with optional filters)
-        call: ion-group.get-entities-hierarchy
-        outputParameters:
-        - type: object
-          mapping: $.
   - type: mcp
+    namespace: ion-group-entities-mcp
     port: 9090
-    namespace: ion-group-mcp
     transport: http
-    description: MCP adapter for Ion Group Acuris Entities API for AI agent use.
+    description: MCP adapter for Ion Group Acuris Entities API — Entities. One tool per consumed operation, routed inline
+      through this capability's consumes block.
     tools:
-    - name: get-entities
+    - name: ion-group-get-list-entities
       description: Ion Group Get list of entities (with optional filters)
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: ion-group.get-entities
+      call: ion-group-entities.get
       with:
+        Accept-Encoding: tools.Accept-Encoding
         entityName: tools.entityName
         entityType: tools.entityType
         before: tools.before
@@ -183,78 +209,32 @@ capability:
         hqState: tools.hqState
         instrumentIsin: tools.instrumentIsin
         instrumentLei: tools.instrumentLei
-      inputParameters:
-      - name: entityName
-        type: string
-        description: Search by entity name.
-      - name: entityType
-        type: array
-        description: Search by entity type.
-      - name: before
-        type: string
-        description: it acts as a live cursor and specify cursor where to end the result set
-      - name: after
-        type: string
-        description: it acts as a live cursor and specify cursor where to start the result set
-      - name: sector
-        type: array
-        description: Search by entity sector. <br>To see available values please visit <a href="/reference/docs#Industries,
-          Sectors and Subsectors">Reference data</a>.
-      - name: subsector
-        type: array
-        description: Search by entity subsector. <br>To see available values please visit <a href="/reference/docs#Industries,
-          Sectors and Subsectors">Reference data</a>.
-      - name: hqCountry
-        type: array
-        description: Search by headquarters country. <br>To see available values please visit <a href="/reference/docs#Countries
-          and States">Reference data</a>.
-      - name: hqState
-        type: array
-        description: Search by headquarters state. <br>To see available values please visit <a href="/reference/docs#Countries
-          and States">Reference data</a>.
-      - name: instrumentIsin
-        type: string
-        description: Search by ISIN.
-      - name: instrumentLei
-        type: string
-        description: Search by LEI.
       outputParameters:
       - type: object
         mapping: $.
-    - name: get-entities-id
-      description: Ion Group Get one entity by its ID
-      hints:
-        readOnly: true
-        destructive: false
-        idempotent: true
-      call: ion-group.get-entities-id
-      with:
-        id: tools.id
-      inputParameters:
-      - name: id
-        type: string
-        description: 'ID of the entity. This parameter is required and needs to match the following RegExp: ^prime-[0-9]+$'
-        required: true
-      outputParameters:
-      - type: object
-        mapping: $.
-    - name: get-entities-hierarchy
+    - name: ion-group-get-entities-hierarchy
       description: Ion Group Get entities hierarchy (with optional filters)
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: ion-group.get-entities-hierarchy
+      call: ion-group-entities.get
       with:
+        Accept-Encoding: tools.Accept-Encoding
         instrumentIsin: tools.instrumentIsin
-      inputParameters:
-      - name: instrumentIsin
-        type: string
-        description: Search by ISIN.
       outputParameters:
       - type: object
         mapping: $.
-binds:
-- namespace: env
-  keys:
-    ION_GROUP_TOKEN: ION_GROUP_TOKEN
+    - name: ion-group-get-one-entity
+      description: Ion Group Get one entity by its ID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ion-group-entities.get
+      with:
+        Accept-Encoding: tools.Accept-Encoding
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
