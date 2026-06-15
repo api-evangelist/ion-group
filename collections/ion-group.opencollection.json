@@ -1,0 +1,155 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ion Group Acuris Entities API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Entities",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Ion Group Get list of entities (with optional filters)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.acuris.com/entities",
+            "headers": [
+              {
+                "name": "Accept-Encoding",
+                "value": "deflate,gzip"
+              }
+            ],
+            "params": [
+              {
+                "name": "entityName",
+                "value": "",
+                "type": "query",
+                "description": "Search by entity name."
+              },
+              {
+                "name": "entityType",
+                "value": "",
+                "type": "query",
+                "description": "Search by entity type."
+              },
+              {
+                "name": "before",
+                "value": "",
+                "type": "query",
+                "description": "it acts as a live cursor and specify cursor where to end the result set"
+              },
+              {
+                "name": "after",
+                "value": "",
+                "type": "query",
+                "description": "it acts as a live cursor and specify cursor where to start the result set"
+              },
+              {
+                "name": "sector",
+                "value": "",
+                "type": "query",
+                "description": "Search by entity sector. <br>To see available values please visit <a href=\"/reference/docs#Industries, Sectors and Subsectors\">Reference data</a>."
+              },
+              {
+                "name": "subsector",
+                "value": "",
+                "type": "query",
+                "description": "Search by entity subsector. <br>To see available values please visit <a href=\"/reference/docs#Industries, Sectors and Subsectors\">Reference data</a>."
+              },
+              {
+                "name": "hqCountry",
+                "value": "",
+                "type": "query",
+                "description": "Search by headquarters country. <br>To see available values please visit <a href=\"/reference/docs#Countries and States\">Reference data</a>."
+              },
+              {
+                "name": "hqState",
+                "value": "",
+                "type": "query",
+                "description": "Search by headquarters state. <br>To see available values please visit <a href=\"/reference/docs#Countries and States\">Reference data</a>."
+              },
+              {
+                "name": "instrumentIsin",
+                "value": "",
+                "type": "query",
+                "description": "Search by ISIN."
+              },
+              {
+                "name": "instrumentLei",
+                "value": "",
+                "type": "query",
+                "description": "Search by LEI."
+              }
+            ]
+          },
+          "docs": "Returns JSON containing entities matching given filtering criteria set (or top ten entities when no filters are provided)."
+        },
+        {
+          "info": {
+            "name": "Ion Group Get one entity by its ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.acuris.com/entities/:id",
+            "headers": [
+              {
+                "name": "Accept-Encoding",
+                "value": "deflate,gzip"
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "ID of the entity. This parameter is required and needs to match the following RegExp: ^prime-[0-9]+$"
+              }
+            ]
+          },
+          "docs": "Ion Group Get one entity by its ID"
+        },
+        {
+          "info": {
+            "name": "Ion Group Get entities hierarchy (with optional filters)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.acuris.com/entities/hierarchy",
+            "headers": [
+              {
+                "name": "Accept-Encoding",
+                "value": "deflate,gzip"
+              }
+            ],
+            "params": [
+              {
+                "name": "instrumentIsin",
+                "value": "",
+                "type": "query",
+                "description": "Search by ISIN."
+              }
+            ]
+          },
+          "docs": "Returns JSON containing entities matching given filtering criteria set (or top ten entities when no filters are provided)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

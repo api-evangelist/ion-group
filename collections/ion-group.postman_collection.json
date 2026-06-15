@@ -1,0 +1,1610 @@
+{
+  "item": [
+    {
+      "id": "412d2be3-16a7-4828-b261-3187bd24f019",
+      "name": "Entities",
+      "description": {
+        "content": "Get list of entities",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7b30136c-ab79-4db9-9f4b-f045c27620de",
+          "name": "Ion Group Get list of entities (with optional filters)",
+          "request": {
+            "name": "Ion Group Get list of entities (with optional filters)",
+            "description": {
+              "content": "Returns JSON containing entities matching given filtering criteria set (or top ten entities when no filters are provided).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "entities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "entityName",
+                  "value": "<string>",
+                  "description": "Search by entity name."
+                },
+                {
+                  "disabled": false,
+                  "key": "entityType",
+                  "value": "<string>",
+                  "description": "Search by entity type."
+                },
+                {
+                  "disabled": false,
+                  "key": "before",
+                  "value": "<string>",
+                  "description": "it acts as a live cursor and specify cursor where to end the result set"
+                },
+                {
+                  "disabled": false,
+                  "key": "after",
+                  "value": "<string>",
+                  "description": "it acts as a live cursor and specify cursor where to start the result set"
+                },
+                {
+                  "disabled": false,
+                  "key": "sector",
+                  "value": "<string>",
+                  "description": "Search by entity sector. <br>To see available values please visit <a href=\"/reference/docs#Industries, Sectors and Subsectors\">Reference data</a>."
+                },
+                {
+                  "disabled": false,
+                  "key": "subsector",
+                  "value": "<string>",
+                  "description": "Search by entity subsector. <br>To see available values please visit <a href=\"/reference/docs#Industries, Sectors and Subsectors\">Reference data</a>."
+                },
+                {
+                  "disabled": false,
+                  "key": "hqCountry",
+                  "value": "<string>",
+                  "description": "Search by headquarters country. <br>To see available values please visit <a href=\"/reference/docs#Countries and States\">Reference data</a>."
+                },
+                {
+                  "disabled": false,
+                  "key": "hqState",
+                  "value": "<string>",
+                  "description": "Search by headquarters state. <br>To see available values please visit <a href=\"/reference/docs#Countries and States\">Reference data</a>."
+                },
+                {
+                  "disabled": false,
+                  "key": "instrumentIsin",
+                  "value": "<string>",
+                  "description": "Search by ISIN."
+                },
+                {
+                  "disabled": false,
+                  "key": "instrumentLei",
+                  "value": "<string>",
+                  "description": "Search by LEI."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                "key": "Accept-Encoding",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ea321a33-865d-4e4e-b5f7-eb685a74922b",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "entityName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "entityType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subsector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hqCountry",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hqState",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "instrumentIsin",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "instrumentLei",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"hits\": 18532,\n  \"results\": [\n    {\n      \"mmgid\": \"prime-24348\",\n      \"name\": \"Bank of America\",\n      \"description\": \"US-based investment bank and investment banking arm of Bank of America corporation\",\n      \"aliases\": [\n        {\n          \"mmgid\": \"prime-1907095\",\n          \"locale\": \"zh-CN\",\n          \"type\": \"local-character\",\n          \"value\": \"百度风投\"\n        },\n        {\n          \"mmgid\": \"prime-1907095\",\n          \"locale\": \"zh-CN\",\n          \"type\": \"local-character\",\n          \"value\": \"百度风投\"\n        }\n      ],\n      \"instruments\": [\n        {\n          \"symbol\": \"AAPL\",\n          \"name\": \"ticker\"\n        },\n        {\n          \"symbol\": \"AAPL\",\n          \"name\": \"ticker\"\n        }\n      ],\n      \"email\": \"investor_relations@apple.com\",\n      \"url\": \"http://www.apple.com\",\n      \"telephone\": \"+1 408 996 1010\",\n      \"fax\": \"+1 408 996 0275\",\n      \"registry\": {\n        \"registrar\": \"U.S. Securities and Exchange Commission\",\n        \"id\": \"0000320193\"\n      },\n      \"headquaters\": {\n        \"postcode\": \"95014\",\n        \"country\": {\n          \"mmgid\": \"prime-USA\",\n          \"value\": \"USA\",\n          \"code\": \"USA\"\n        },\n        \"state\": {\n          \"mmgid\": \"prime-CA\",\n          \"value\": \"California (CA)\",\n          \"code\": \"CA\"\n        },\n        \"address\": \"One Apple Park Way\",\n        \"city\": \"Cupertino\"\n      },\n      \"sectors\": [\n        {\n          \"mmgid\": \"prime-telcomhardware\",\n          \"value\": \"Telecommunications: Hardware\",\n          \"code\": \"telcomhardware\"\n        },\n        {\n          \"mmgid\": \"prime-telcomhardware\",\n          \"value\": \"Telecommunications: Hardware\",\n          \"code\": \"telcomhardware\"\n        }\n      ],\n      \"subsectors\": [\n        {\n          \"mmgid\": \"prime-laptops\",\n          \"value\": \"Laptops\",\n          \"code\": \"laptops\"\n        },\n        {\n          \"mmgid\": \"prime-laptops\",\n          \"value\": \"Laptops\",\n          \"code\": \"laptops\"\n        }\n      ],\n      \"isCeased\": false,\n      \"operationalGeography\": {\n        \"countries\": [\n          {\n            \"mmgid\": \"prime-USA\",\n            \"value\": \"USA\",\n            \"code\": \"USA\"\n          },\n          {\n            \"mmgid\": \"prime-USA\",\n            \"value\": \"USA\",\n            \"code\": \"USA\"\n          }\n        ],\n        \"states\": [\n          {\n            \"mmgid\": \"prime-CA\",\n            \"value\": \"California (CA)\",\n            \"code\": \"CA\"\n          },\n          {\n            \"mmgid\": \"prime-CA\",\n            \"value\": \"California (CA)\",\n            \"code\": \"CA\"\n          }\n        ]\n      },\n      \"majorStakeholder\": {\n        \"mmgid\": \"prime-53926\",\n        \"name\": \"Alphabet Inc.\"\n      },\n      \"types\": [\n        {\n          \"mmgid\": \"prime-corporate\",\n          \"value\": \"Corporate\",\n          \"code\": \"corporate\"\n        },\n        {\n          \"mmgid\": \"prime-corporate\",\n          \"value\": \"Corporate\",\n          \"code\": \"corporate\"\n        }\n      ],\n      \"ownership\": {\n        \"mmgid\": \"prime-state\",\n        \"value\": \"State owned\",\n        \"code\": \"state\"\n      }\n    },\n    {\n      \"mmgid\": \"prime-24348\",\n      \"name\": \"Bank of America\",\n      \"description\": \"US-based investment bank and investment banking arm of Bank of America corporation\",\n      \"aliases\": [\n        {\n          \"mmgid\": \"prime-1907095\",\n          \"locale\": \"zh-CN\",\n          \"type\": \"local-character\",\n          \"value\": \"百度风投\"\n        },\n        {\n          \"mmgid\": \"prime-1907095\",\n          \"locale\": \"zh-CN\",\n          \"type\": \"local-character\",\n          \"value\": \"百度风投\"\n        }\n      ],\n      \"instruments\": [\n        {\n          \"symbol\": \"AAPL\",\n          \"name\": \"ticker\"\n        },\n        {\n          \"symbol\": \"AAPL\",\n          \"name\": \"ticker\"\n        }\n      ],\n      \"email\": \"investor_relations@apple.com\",\n      \"url\": \"http://www.apple.com\",\n      \"telephone\": \"+1 408 996 1010\",\n      \"fax\": \"+1 408 996 0275\",\n      \"registry\": {\n        \"registrar\": \"U.S. Securities and Exchange Commission\",\n        \"id\": \"0000320193\"\n      },\n      \"headquaters\": {\n        \"postcode\": \"95014\",\n        \"country\": {\n          \"mmgid\": \"prime-USA\",\n          \"value\": \"USA\",\n          \"code\": \"USA\"\n        },\n        \"state\": {\n          \"mmgid\": \"prime-CA\",\n          \"value\": \"California (CA)\",\n          \"code\": \"CA\"\n        },\n        \"address\": \"One Apple Park Way\",\n        \"city\": \"Cupertino\"\n      },\n      \"sectors\": [\n        {\n          \"mmgid\": \"prime-telcomhardware\",\n          \"value\": \"Telecommunications: Hardware\",\n          \"code\": \"telcomhardware\"\n        },\n        {\n          \"mmgid\": \"prime-telcomhardware\",\n          \"value\": \"Telecommunications: Hardware\",\n          \"code\": \"telcomhardware\"\n        }\n      ],\n      \"subsectors\": [\n        {\n          \"mmgid\": \"prime-laptops\",\n          \"value\": \"Laptops\",\n          \"code\": \"laptops\"\n        },\n        {\n          \"mmgid\": \"prime-laptops\",\n          \"value\": \"Laptops\",\n          \"code\": \"laptops\"\n        }\n      ],\n      \"isCeased\": false,\n      \"operationalGeography\": {\n        \"countries\": [\n          {\n            \"mmgid\": \"prime-USA\",\n            \"value\": \"USA\",\n            \"code\": \"USA\"\n          },\n          {\n            \"mmgid\": \"prime-USA\",\n            \"value\": \"USA\",\n            \"code\": \"USA\"\n          }\n        ],\n        \"states\": [\n          {\n            \"mmgid\": \"prime-CA\",\n            \"value\": \"California (CA)\",\n            \"code\": \"CA\"\n          },\n          {\n            \"mmgid\": \"prime-CA\",\n            \"value\": \"California (CA)\",\n            \"code\": \"CA\"\n          }\n        ]\n      },\n      \"majorStakeholder\": {\n        \"mmgid\": \"prime-53926\",\n        \"name\": \"Alphabet Inc.\"\n      },\n      \"types\": [\n        {\n          \"mmgid\": \"prime-corporate\",\n          \"value\": \"Corporate\",\n          \"code\": \"corporate\"\n        },\n        {\n          \"mmgid\": \"prime-corporate\",\n          \"value\": \"Corporate\",\n          \"code\": \"corporate\"\n        }\n      ],\n      \"ownership\": {\n        \"mmgid\": \"prime-state\",\n        \"value\": \"State owned\",\n        \"code\": \"state\"\n      }\n    }\n  ],\n  \"_links\": {\n    \"previous\": \"https://api.acuris.com/entities?before=prime-24348\",\n    \"next\": \"https://api.acuris.com/entities?after=prime-24348\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "84320dd7-599d-47e9-af4a-0ed33f86c442",
+              "name": "Provided parameters were invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "entityName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "entityType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subsector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hqCountry",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hqState",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "instrumentIsin",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "instrumentLei",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Sample error message.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "caf4eb81-c59d-487b-ad82-71d26ded59cf",
+              "name": "Request rejected due to lack of valid authentication credentials for target content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "entityName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "entityType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subsector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hqCountry",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hqState",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "instrumentIsin",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "instrumentLei",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Sample error message.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4f698959-c435-49ef-a702-a517d0df202c",
+              "name": "User does not exist, is inactive or doesn't have rights to view content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "entityName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "entityType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subsector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hqCountry",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hqState",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "instrumentIsin",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "instrumentLei",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Sample error message.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ff34f1a2-f8e1-4540-931f-e0904038ff13",
+              "name": "Invalid URL.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "entityName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "entityType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subsector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hqCountry",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hqState",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "instrumentIsin",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "instrumentLei",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Sample error message.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "88bc9d15-2d27-4eea-ba81-434b156e4dc6",
+              "name": "Invalid HTTP method - only GET is supported",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "entityName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "entityType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subsector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hqCountry",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hqState",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "instrumentIsin",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "instrumentLei",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Method Not Allowed",
+              "code": 405,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Sample error message.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1c8d46d6-ea55-4734-9dac-a84e855e633a",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "entityName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "entityType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "subsector",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hqCountry",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hqState",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "instrumentIsin",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "instrumentLei",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Sample error message.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e2d5a32a-7cb0-4a07-8541-a40080cc711e",
+          "name": "Ion Group Get one entity by its ID",
+          "request": {
+            "name": "Ion Group Get one entity by its ID",
+            "description": {},
+            "url": {
+              "path": [
+                "entities",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) ID of the entity. This parameter is required and needs to match the following RegExp: ^prime-[0-9]+$"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                "key": "Accept-Encoding",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b48a90df-0932-457f-a14f-18949f0b7074",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) ID of the entity. This parameter is required and needs to match the following RegExp: ^prime-[0-9]+$"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"mmgid\": \"prime-24348\",\n  \"name\": \"Bank of America\",\n  \"description\": \"US-based investment bank and investment banking arm of Bank of America corporation\",\n  \"aliases\": [\n    {\n      \"mmgid\": \"prime-1907095\",\n      \"locale\": \"zh-CN\",\n      \"type\": \"local-character\",\n      \"value\": \"百度风投\"\n    },\n    {\n      \"mmgid\": \"prime-1907095\",\n      \"locale\": \"zh-CN\",\n      \"type\": \"local-character\",\n      \"value\": \"百度风投\"\n    }\n  ],\n  \"instruments\": [\n    {\n      \"symbol\": \"AAPL\",\n      \"name\": \"ticker\"\n    },\n    {\n      \"symbol\": \"AAPL\",\n      \"name\": \"ticker\"\n    }\n  ],\n  \"email\": \"investor_relations@apple.com\",\n  \"url\": \"http://www.apple.com\",\n  \"telephone\": \"+1 408 996 1010\",\n  \"fax\": \"+1 408 996 0275\",\n  \"registry\": {\n    \"registrar\": \"U.S. Securities and Exchange Commission\",\n    \"id\": \"0000320193\"\n  },\n  \"headquaters\": {\n    \"postcode\": \"95014\",\n    \"country\": {\n      \"mmgid\": \"prime-USA\",\n      \"value\": \"USA\",\n      \"code\": \"USA\"\n    },\n    \"state\": {\n      \"mmgid\": \"prime-CA\",\n      \"value\": \"California (CA)\",\n      \"code\": \"CA\"\n    },\n    \"address\": \"One Apple Park Way\",\n    \"city\": \"Cupertino\"\n  },\n  \"sectors\": [\n    {\n      \"mmgid\": \"prime-telcomhardware\",\n      \"value\": \"Telecommunications: Hardware\",\n      \"code\": \"telcomhardware\"\n    },\n    {\n      \"mmgid\": \"prime-telcomhardware\",\n      \"value\": \"Telecommunications: Hardware\",\n      \"code\": \"telcomhardware\"\n    }\n  ],\n  \"subsectors\": [\n    {\n      \"mmgid\": \"prime-laptops\",\n      \"value\": \"Laptops\",\n      \"code\": \"laptops\"\n    },\n    {\n      \"mmgid\": \"prime-laptops\",\n      \"value\": \"Laptops\",\n      \"code\": \"laptops\"\n    }\n  ],\n  \"isCeased\": true,\n  \"operationalGeography\": {\n    \"countries\": [\n      {\n        \"mmgid\": \"prime-USA\",\n        \"value\": \"USA\",\n        \"code\": \"USA\"\n      },\n      {\n        \"mmgid\": \"prime-USA\",\n        \"value\": \"USA\",\n        \"code\": \"USA\"\n      }\n    ],\n    \"states\": [\n      {\n        \"mmgid\": \"prime-CA\",\n        \"value\": \"California (CA)\",\n        \"code\": \"CA\"\n      },\n      {\n        \"mmgid\": \"prime-CA\",\n        \"value\": \"California (CA)\",\n        \"code\": \"CA\"\n      }\n    ]\n  },\n  \"majorStakeholder\": {\n    \"mmgid\": \"prime-53926\",\n    \"name\": \"Alphabet Inc.\"\n  },\n  \"types\": [\n    {\n      \"mmgid\": \"prime-corporate\",\n      \"value\": \"Corporate\",\n      \"code\": \"corporate\"\n    },\n    {\n      \"mmgid\": \"prime-corporate\",\n      \"value\": \"Corporate\",\n      \"code\": \"corporate\"\n    }\n  ],\n  \"ownership\": {\n    \"mmgid\": \"prime-state\",\n    \"value\": \"State owned\",\n    \"code\": \"state\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6386f528-309c-46e0-8885-2d8d53dd8c09",
+              "name": "Request rejected due to lack of valid authentication credentials for target content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) ID of the entity. This parameter is required and needs to match the following RegExp: ^prime-[0-9]+$"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Sample error message.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3ef4f84b-2552-4639-9047-fce3bc76c672",
+              "name": "User does not exist, is inactive or doesn't have rights to view content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) ID of the entity. This parameter is required and needs to match the following RegExp: ^prime-[0-9]+$"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Sample error message.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bc03d0ee-66d3-4eeb-8764-cb96b92137df",
+              "name": "Invalid URL, deal ID is in invalid format or deal not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) ID of the entity. This parameter is required and needs to match the following RegExp: ^prime-[0-9]+$"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Sample error message.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9343ca7a-9ddf-4064-96b4-461379da729c",
+              "name": "Invalid HTTP method - only GET is supported",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) ID of the entity. This parameter is required and needs to match the following RegExp: ^prime-[0-9]+$"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Method Not Allowed",
+              "code": 405,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Sample error message.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "382413d3-9fcb-4892-ba92-db527a5e8494",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) ID of the entity. This parameter is required and needs to match the following RegExp: ^prime-[0-9]+$"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Sample error message.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74d5428f-1cc3-4c2f-9155-f9c0f7ce67d8",
+          "name": "Ion Group Get entities hierarchy (with optional filters)",
+          "request": {
+            "name": "Ion Group Get entities hierarchy (with optional filters)",
+            "description": {
+              "content": "Returns JSON containing entities matching given filtering criteria set (or top ten entities when no filters are provided).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "entities",
+                "hierarchy"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "instrumentIsin",
+                  "value": "<string>",
+                  "description": "Search by ISIN."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                "key": "Accept-Encoding",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d158fb98-4437-42c1-9c0f-5d24428f99cf",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities",
+                    "hierarchy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "instrumentIsin",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"hits\": 18532,\n  \"results\": [\n    {\n      \"self\": {\n        \"id\": \"60d1ade50499300009d5d8db\",\n        \"parentID\": \"60d1ade50499300009d5d8db\",\n        \"instrumentIsin\": [\n          \"DE000DL2TRD5\",\n          \"DE000DL2TRFF\"\n        ],\n        \"mmgId\": [\n          \"275710\",\n          \"285711\"\n        ]\n      },\n      \"ancestors\": [\n        {\n          \"id\": \"60d1ade50499300009d5d8db\",\n          \"parentID\": \"60d1ade50499300009d5d8db\",\n          \"instrumentIsin\": [\n            \"DE000DL2TRD5\",\n            \"DE000DL2TRFF\"\n          ],\n          \"mmgId\": [\n            \"275710\",\n            \"285711\"\n          ]\n        },\n        {\n          \"id\": \"60d1ade50499300009d5d8db\",\n          \"parentID\": \"60d1ade50499300009d5d8db\",\n          \"instrumentIsin\": [\n            \"DE000DL2TRD5\",\n            \"DE000DL2TRFF\"\n          ],\n          \"mmgId\": [\n            \"275710\",\n            \"285711\"\n          ]\n        }\n      ],\n      \"descendants\": [\n        {\n          \"id\": \"60d1ade50499300009d5d8db\",\n          \"parentID\": \"60d1ade50499300009d5d8db\",\n          \"instrumentIsin\": [\n            \"DE000DL2TRD5\",\n            \"DE000DL2TRFF\"\n          ],\n          \"mmgId\": [\n            \"275710\",\n            \"285711\"\n          ]\n        },\n        {\n          \"id\": \"60d1ade50499300009d5d8db\",\n          \"parentID\": \"60d1ade50499300009d5d8db\",\n          \"instrumentIsin\": [\n            \"DE000DL2TRD5\",\n            \"DE000DL2TRFF\"\n          ],\n          \"mmgId\": [\n            \"275710\",\n            \"285711\"\n          ]\n        }\n      ],\n      \"siblings\": [\n        {\n          \"id\": \"60d1ade50499300009d5d8db\",\n          \"parentID\": \"60d1ade50499300009d5d8db\",\n          \"instrumentIsin\": [\n            \"DE000DL2TRD5\",\n            \"DE000DL2TRFF\"\n          ],\n          \"mmgId\": [\n            \"275710\",\n            \"285711\"\n          ]\n        },\n        {\n          \"id\": \"60d1ade50499300009d5d8db\",\n          \"parentID\": \"60d1ade50499300009d5d8db\",\n          \"instrumentIsin\": [\n            \"DE000DL2TRD5\",\n            \"DE000DL2TRFF\"\n          ],\n          \"mmgId\": [\n            \"275710\",\n            \"285711\"\n          ]\n        }\n      ]\n    },\n    {\n      \"self\": {\n        \"id\": \"60d1ade50499300009d5d8db\",\n        \"parentID\": \"60d1ade50499300009d5d8db\",\n        \"instrumentIsin\": [\n          \"DE000DL2TRD5\",\n          \"DE000DL2TRFF\"\n        ],\n        \"mmgId\": [\n          \"275710\",\n          \"285711\"\n        ]\n      },\n      \"ancestors\": [\n        {\n          \"id\": \"60d1ade50499300009d5d8db\",\n          \"parentID\": \"60d1ade50499300009d5d8db\",\n          \"instrumentIsin\": [\n            \"DE000DL2TRD5\",\n            \"DE000DL2TRFF\"\n          ],\n          \"mmgId\": [\n            \"275710\",\n            \"285711\"\n          ]\n        },\n        {\n          \"id\": \"60d1ade50499300009d5d8db\",\n          \"parentID\": \"60d1ade50499300009d5d8db\",\n          \"instrumentIsin\": [\n            \"DE000DL2TRD5\",\n            \"DE000DL2TRFF\"\n          ],\n          \"mmgId\": [\n            \"275710\",\n            \"285711\"\n          ]\n        }\n      ],\n      \"descendants\": [\n        {\n          \"id\": \"60d1ade50499300009d5d8db\",\n          \"parentID\": \"60d1ade50499300009d5d8db\",\n          \"instrumentIsin\": [\n            \"DE000DL2TRD5\",\n            \"DE000DL2TRFF\"\n          ],\n          \"mmgId\": [\n            \"275710\",\n            \"285711\"\n          ]\n        },\n        {\n          \"id\": \"60d1ade50499300009d5d8db\",\n          \"parentID\": \"60d1ade50499300009d5d8db\",\n          \"instrumentIsin\": [\n            \"DE000DL2TRD5\",\n            \"DE000DL2TRFF\"\n          ],\n          \"mmgId\": [\n            \"275710\",\n            \"285711\"\n          ]\n        }\n      ],\n      \"siblings\": [\n        {\n          \"id\": \"60d1ade50499300009d5d8db\",\n          \"parentID\": \"60d1ade50499300009d5d8db\",\n          \"instrumentIsin\": [\n            \"DE000DL2TRD5\",\n            \"DE000DL2TRFF\"\n          ],\n          \"mmgId\": [\n            \"275710\",\n            \"285711\"\n          ]\n        },\n        {\n          \"id\": \"60d1ade50499300009d5d8db\",\n          \"parentID\": \"60d1ade50499300009d5d8db\",\n          \"instrumentIsin\": [\n            \"DE000DL2TRD5\",\n            \"DE000DL2TRFF\"\n          ],\n          \"mmgId\": [\n            \"275710\",\n            \"285711\"\n          ]\n        }\n      ]\n    }\n  ],\n  \"_links\": {\n    \"previous\": \"https://api.acuris.com/entities/hierarchy?before=NjBkMWU2ZTQ2NmIxNzUwOTU3ZDJkMDBh.3573e609\",\n    \"next\": \"https://api.acuris.com/entities/hierarchy?after=NjBkNDg5YjE2OTk3YjQ2ODNiMDhjMGU0.4ab96e02\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c357951e-c25b-4c17-87a8-b3b801c5005e",
+              "name": "Provided parameters were invalid.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities",
+                    "hierarchy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "instrumentIsin",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Sample error message.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a8c6f972-8286-4963-9447-12ef7ac23221",
+              "name": "Request rejected due to lack of valid authentication credentials for target content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities",
+                    "hierarchy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "instrumentIsin",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Sample error message.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c4abeb38-037a-4d14-b052-127de50a52f6",
+              "name": "User does not exist, is inactive or doesn't have rights to view content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities",
+                    "hierarchy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "instrumentIsin",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Sample error message.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a742e8ea-252a-4875-8d75-6a4102d7b736",
+              "name": "Invalid URL.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities",
+                    "hierarchy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "instrumentIsin",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Sample error message.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ac3ca636-42ea-4492-833a-6534290f6dfd",
+              "name": "Invalid HTTP method - only GET is supported",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities",
+                    "hierarchy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "instrumentIsin",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Method Not Allowed",
+              "code": 405,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Sample error message.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8f9a2a20-a191-457b-89b6-8c4cc3a5fc80",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entities",
+                    "hierarchy"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "instrumentIsin",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "We recommend the use of GZIP compression which produces savings from 60 to 80% in the json data transfer.",
+                    "key": "Accept-Encoding",
+                    "value": "deflate,gzip"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Sample error message.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.acuris.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3ce7374a-ba00-4a28-a051-f2e845c8b424",
+    "name": "Ion Group Acuris Entities API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}
