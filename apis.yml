@@ -47,6 +47,10 @@ apis:
       - url: https://iongroup.com/analytics/data-portal/apis-data-feeds/spac-api/documentation/
         type: Documentation
 common:
+  - type: DomainSecurity
+    url: security/ion-group-domain-security.yml
+  - type: Authentication
+    url: authentication/ion-group-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/iongroup
   - type: LinkedIn
