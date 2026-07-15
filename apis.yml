@@ -47,6 +47,8 @@ apis:
       - url: https://iongroup.com/analytics/data-portal/apis-data-feeds/spac-api/documentation/
         type: Documentation
 common:
+  - type: AgenticAccess
+    url: agentic-access/ion-group-agentic-access.yml
   - type: DomainSecurity
     url: security/ion-group-domain-security.yml
   - type: Authentication
