@@ -1,0 +1,14 @@
+{
+  "provider": "ion-group",
+  "sources": [
+    "ion-group-entities-api-openapi.yml"
+  ],
+  "outputs": [
+    "ion-group-entities-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
