@@ -27,7 +27,7 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/ion-group/refs/heads/main/apis.yml
 created: '2024-04-14'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: ion-group:dealogic-analytics-spac-api
   name: Ion Group Dealogic Analytics SPAC API
