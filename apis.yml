@@ -22,6 +22,11 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ion-group.
 tags:
   - Analytics
   - Financial
+  - Financial-Services
+  - Trading
+tags_raw:
+  - Analytics
+  - Financial
   - Financial Services
   - Trading
 url: https://raw.githubusercontent.com/api-evangelist/ion-group/refs/heads/main/apis.yml
