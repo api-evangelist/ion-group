@@ -1,4 +1,4 @@
-openapi: 3.0.2
+openapi: 3.2.0
 info:
   title: Ion Group Acuris Entities API
   version: 1.0.0
@@ -37,7 +37,6 @@ paths:
         required: false
         schema:
           type: array
-          nullable: false
           items:
             type: string
             enum:
@@ -73,7 +72,6 @@ paths:
         description: Search by entity sector. <br>To see available values please visit <a href="/reference/docs#Industries, Sectors and Subsectors">Reference data</a>.
         schema:
           type: array
-          nullable: false
           items:
             type: string
             enum:
@@ -119,7 +117,6 @@ paths:
         description: Search by entity subsector. <br>To see available values please visit <a href="/reference/docs#Industries, Sectors and Subsectors">Reference data</a>.
         schema:
           type: array
-          nullable: false
           items:
             type: string
             enum:
@@ -323,7 +320,6 @@ paths:
         description: Search by headquarters country. <br>To see available values please visit <a href="/reference/docs#Countries and States">Reference data</a>.
         schema:
           type: array
-          nullable: false
           items:
             type: string
           minItems: 1
@@ -335,7 +331,6 @@ paths:
         description: Search by headquarters state. <br>To see available values please visit <a href="/reference/docs#Countries and States">Reference data</a>.
         schema:
           type: array
-          nullable: false
           items:
             type: string
           minItems: 1
@@ -397,6 +392,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResponse'
+      operationId: getEntities
+      x-operation-id-source: derived
   /entities/{id}:
     get:
       tags:
@@ -454,6 +451,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResponse'
+      operationId: getEntitiesById
+      x-operation-id-source: derived
   /entities/hierarchy:
     get:
       tags:
@@ -517,25 +516,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResponse'
+      operationId: getEntitiesHierarchy
+      x-operation-id-source: derived
 components:
   schemas:
-    EntityHierarchy:
-      type: object
-      properties:
-        self:
-          $ref: '#/components/schemas/HierarchyNode'
-        ancestors:
-          type: array
-          items:
-            $ref: '#/components/schemas/HierarchyNode'
-        descendants:
-          type: array
-          items:
-            $ref: '#/components/schemas/HierarchyNode'
-        siblings:
-          type: array
-          items:
-            $ref: '#/components/schemas/HierarchyNode'
     EntitiesResponse:
       type: object
       properties:
@@ -558,12 +542,6 @@ components:
               type: string
               description: '-'
               example: https://api.acuris.com/entities?after=prime-24348
-    ApiResponse:
-      type: object
-      properties:
-        message:
-          type: string
-          example: Sample error message.
     HierarchyNode:
       type: object
       properties:
@@ -869,6 +847,29 @@ components:
               type: string
               description: ''
               example: state
+    ApiResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Sample error message.
+    EntityHierarchy:
+      type: object
+      properties:
+        self:
+          $ref: '#/components/schemas/HierarchyNode'
+        ancestors:
+          type: array
+          items:
+            $ref: '#/components/schemas/HierarchyNode'
+        descendants:
+          type: array
+          items:
+            $ref: '#/components/schemas/HierarchyNode'
+        siblings:
+          type: array
+          items:
+            $ref: '#/components/schemas/HierarchyNode'
   securitySchemes:
     apiKey:
       type: apiKey
