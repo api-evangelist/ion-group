@@ -520,12 +520,86 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    HierarchyNode:
+      type: object
+      properties:
+        id:
+          type: string
+          description: unique identifier of the element
+          example: 60d1ade50499300009d5d8db
+        parentID:
+          type: string
+          description: unique identifier of the parent element of {id}
+          example: 60d1ade50499300009d5d8db
+          required: 'false'
+        instrumentIsin:
+          type: array
+          description: ISIN identifiers
+          required: 'false'
+          example:
+          - DE000DL2TRD5
+          - DE000DL2TRFF
+          items:
+            type: string
+        mmgId:
+          type: array
+          description: '''prime-id'' of the entity in /entity/ API endpoint'
+          required: 'false'
+          example:
+          - '275710'
+          - '285711'
+          items:
+            type: string
+    EntitiesHierarchyResponse:
+      type: object
+      properties:
+        hits:
+          type: integer
+          format: int64
+          example: 18532
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/EntityHierarchy'
+        _links:
+          type: object
+          properties:
+            previous:
+              type: string
+              description: '-'
+              example: https://api.acuris.com/entities/hierarchy?before=NjBkMWU2ZTQ2NmIxNzUwOTU3ZDJkMDBh.3573e609
+            next:
+              type: string
+              description: '-'
+              example: https://api.acuris.com/entities/hierarchy?after=NjBkNDg5YjE2OTk3YjQ2ODNiMDhjMGU0.4ab96e02
     ApiResponse:
       type: object
       properties:
         message:
           type: string
           example: Sample error message.
+    EntitiesResponse:
+      type: object
+      properties:
+        hits:
+          type: integer
+          format: int64
+          example: 18532
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/EntityInfo'
+        _links:
+          type: object
+          properties:
+            previous:
+              type: string
+              description: '-'
+              example: https://api.acuris.com/entities?before=prime-24348
+            next:
+              type: string
+              description: '-'
+              example: https://api.acuris.com/entities?after=prime-24348
     EntityInfo:
       type: object
       properties:
@@ -779,28 +853,6 @@ components:
               type: string
               description: ''
               example: state
-    EntitiesHierarchyResponse:
-      type: object
-      properties:
-        hits:
-          type: integer
-          format: int64
-          example: 18532
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/EntityHierarchy'
-        _links:
-          type: object
-          properties:
-            previous:
-              type: string
-              description: '-'
-              example: https://api.acuris.com/entities/hierarchy?before=NjBkMWU2ZTQ2NmIxNzUwOTU3ZDJkMDBh.3573e609
-            next:
-              type: string
-              description: '-'
-              example: https://api.acuris.com/entities/hierarchy?after=NjBkNDg5YjE2OTk3YjQ2ODNiMDhjMGU0.4ab96e02
     EntityHierarchy:
       type: object
       properties:
@@ -818,58 +870,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/HierarchyNode'
-    HierarchyNode:
-      type: object
-      properties:
-        id:
-          type: string
-          description: unique identifier of the element
-          example: 60d1ade50499300009d5d8db
-        parentID:
-          type: string
-          description: unique identifier of the parent element of {id}
-          example: 60d1ade50499300009d5d8db
-          required: 'false'
-        instrumentIsin:
-          type: array
-          description: ISIN identifiers
-          required: 'false'
-          example:
-          - DE000DL2TRD5
-          - DE000DL2TRFF
-          items:
-            type: string
-        mmgId:
-          type: array
-          description: '''prime-id'' of the entity in /entity/ API endpoint'
-          required: 'false'
-          example:
-          - '275710'
-          - '285711'
-          items:
-            type: string
-    EntitiesResponse:
-      type: object
-      properties:
-        hits:
-          type: integer
-          format: int64
-          example: 18532
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/EntityInfo'
-        _links:
-          type: object
-          properties:
-            previous:
-              type: string
-              description: '-'
-              example: https://api.acuris.com/entities?before=prime-24348
-            next:
-              type: string
-              description: '-'
-              example: https://api.acuris.com/entities?after=prime-24348
   securitySchemes:
     apiKey:
       type: apiKey
