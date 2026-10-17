@@ -520,6 +520,45 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    EntitiesResponse:
+      type: object
+      properties:
+        hits:
+          type: integer
+          format: int64
+          example: 18532
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/EntityInfo'
+        _links:
+          type: object
+          properties:
+            previous:
+              type: string
+              description: '-'
+              example: https://api.acuris.com/entities?before=prime-24348
+            next:
+              type: string
+              description: '-'
+              example: https://api.acuris.com/entities?after=prime-24348
+    EntityHierarchy:
+      type: object
+      properties:
+        self:
+          $ref: '#/components/schemas/HierarchyNode'
+        ancestors:
+          type: array
+          items:
+            $ref: '#/components/schemas/HierarchyNode'
+        descendants:
+          type: array
+          items:
+            $ref: '#/components/schemas/HierarchyNode'
+        siblings:
+          type: array
+          items:
+            $ref: '#/components/schemas/HierarchyNode'
     HierarchyNode:
       type: object
       properties:
@@ -550,56 +589,6 @@ components:
           - '285711'
           items:
             type: string
-    EntitiesHierarchyResponse:
-      type: object
-      properties:
-        hits:
-          type: integer
-          format: int64
-          example: 18532
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/EntityHierarchy'
-        _links:
-          type: object
-          properties:
-            previous:
-              type: string
-              description: '-'
-              example: https://api.acuris.com/entities/hierarchy?before=NjBkMWU2ZTQ2NmIxNzUwOTU3ZDJkMDBh.3573e609
-            next:
-              type: string
-              description: '-'
-              example: https://api.acuris.com/entities/hierarchy?after=NjBkNDg5YjE2OTk3YjQ2ODNiMDhjMGU0.4ab96e02
-    ApiResponse:
-      type: object
-      properties:
-        message:
-          type: string
-          example: Sample error message.
-    EntitiesResponse:
-      type: object
-      properties:
-        hits:
-          type: integer
-          format: int64
-          example: 18532
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/EntityInfo'
-        _links:
-          type: object
-          properties:
-            previous:
-              type: string
-              description: '-'
-              example: https://api.acuris.com/entities?before=prime-24348
-            next:
-              type: string
-              description: '-'
-              example: https://api.acuris.com/entities?after=prime-24348
     EntityInfo:
       type: object
       properties:
@@ -853,23 +842,34 @@ components:
               type: string
               description: ''
               example: state
-    EntityHierarchy:
+    EntitiesHierarchyResponse:
       type: object
       properties:
-        self:
-          $ref: '#/components/schemas/HierarchyNode'
-        ancestors:
+        hits:
+          type: integer
+          format: int64
+          example: 18532
+        results:
           type: array
           items:
-            $ref: '#/components/schemas/HierarchyNode'
-        descendants:
-          type: array
-          items:
-            $ref: '#/components/schemas/HierarchyNode'
-        siblings:
-          type: array
-          items:
-            $ref: '#/components/schemas/HierarchyNode'
+            $ref: '#/components/schemas/EntityHierarchy'
+        _links:
+          type: object
+          properties:
+            previous:
+              type: string
+              description: '-'
+              example: https://api.acuris.com/entities/hierarchy?before=NjBkMWU2ZTQ2NmIxNzUwOTU3ZDJkMDBh.3573e609
+            next:
+              type: string
+              description: '-'
+              example: https://api.acuris.com/entities/hierarchy?after=NjBkNDg5YjE2OTk3YjQ2ODNiMDhjMGU0.4ab96e02
+    ApiResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Sample error message.
   securitySchemes:
     apiKey:
       type: apiKey
