@@ -1,4 +1,4 @@
-# Ion Group (ion-group)
+# Ion Group
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,73 +66,115 @@
 
 ION Group is a visionary innovator delivering mission-critical trading and workflow automation software to financial institutions, corporations, central banks, and governments. ION helps customers improve decision-making, simplify complex processes, and empower people through automation.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/ion-group/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/ion-group/refs/heads/main/apis.yml)
+**Areas:** Analytics · Finance · Financial Services · Trading
 
-## Scope
+## Ion Group on APIs.io
 
-- **Type:** Index
+Everything profiled for Ion Group is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ion-group/](https://apis.io/providers/ion-group/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (2)
 
-- Analytics
-- Financial
-- Financial Services
-- Trading
+- [Ion Group Dealogic Analytics SPAC API](https://apis.io/apis/ion-group/dealogic-analytics-spac-api/) — Detailed profiling of Special Purpose Acquisition Companies (SPACs). Gain access to real-time content and analytics covering the full spectrum of the SPAC…
+- [Ion Group Entities API](https://apis.io/apis/ion-group/ion-group-entities-api/) — Get list of entities
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-04-14
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Ion Group Acuris Entities API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Acuris Entities API allows you to search over 1 million records of private and public companies, firms, assets, and private investors.
+- [Ion Group Agentic Access](https://apis.io/agentic-access/ion-group/ion-group-agentic-access/)
 
-- **Human URL:** [https://api.acuris.com/entities/docs/api](https://api.acuris.com/entities/docs/api)
-- **Base URL:** `https://api.acuris.com`
+#### Collections (2)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Companies
-- Financial Data
-- Investors
+- [Ion Group Acuris Entities API](https://apis.io/collections/ion-group/open-ion-group/)
+- [Ion Group Acuris Entities API](https://apis.io/collections/ion-group/open-ion-group-entities-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://api.acuris.com/entities/docs/api)
-- [OpenAPI](openapi/ion-group-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/ion-group.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ion-group.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Ion Group Dealogic Analytics SPAC API
+- [Ion Group Authentication](https://apis.io/security/ion-group/ion-group-authentication/)
+- [Ion Group Domain Security](https://apis.io/security/ion-group/ion-group-domain-security/)
 
-Detailed profiling of Special Purpose Acquisition Companies (SPACs). Gain access to real-time content and analytics covering the full spectrum of the SPAC market, from IPO Filing/Pricing, additional fundraising via PIPEs, through to the M&A de-SPAC.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://iongroup.com/analytics/data-portal/apis-data-feeds/spac-api/documentation/](https://iongroup.com/analytics/data-portal/apis-data-feeds/spac-api/documentation/)
+Published plans, tiers and prices.
 
-#### Tags
+- [Ion Group Plans Pricing](https://apis.io/plans/ion-group/ion-group-plans-pricing/)
 
-- Analytics
-- Financial Data
-- SPAC
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://iongroup.com/analytics/data-portal/apis-data-feeds/spac-api/documentation/)
-- [Postman Collection](collections/ion-group.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ion-group.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Ion Group Rate Limits](https://apis.io/rate-limits/ion-group/ion-group-rate-limits/)
 
-## Common Properties
+#### FinOps (1)
 
-- [GitHub Organization](https://github.com/iongroup)
-- [LinkedIn](https://www.linkedin.com/company/iongroup)
+What the API costs to run, by operation.
+
+- [Ion Group Finops](https://apis.io/finops/ion-group/ion-group-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://iongroup.com/)
-- [Portal](https://iongroup.com/analytics/data-portal/)
-- [Integrations](https://iongroup.com/partners/)
+- [GitHub](https://github.com/iongroup)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 25.5** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 48.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 31.0 |
+| Access clarity | 7.9 |
+
+**Agent readiness 33.2** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ion-group/](https://apis.io/providers/ion-group/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ion Group: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ion-group/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
